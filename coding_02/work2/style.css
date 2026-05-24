@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #000;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+header {
+    /* headerを画面幅いっぱいに広げる */
+    width: 100%;
+}
+
+.inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu li {
+    padding: 5px 25px;
+
+    /* メニュー項目の右側に線をつける */
+    border-right: 1px solid #000;
+}
+
+.menu li:last-child {
+    /* 最後のメニュー項目だけ右側の線を消す */
+    border-right: none;
+}
+
+.menu a {
+    font-size: 14px;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .inner {
+        /* PC版ではflexで横並びにしていたものを、縦並びに戻す */
+        display: block;
+
+        padding: 30px 14px;
+    }
+
+    h1 {
+        /* PC版でつけていた左余白をなくす */
+        margin-left: 0;
+    }
+
+    .menu {
+        /* PC版ではflexで横並びだったメニューを、縦並びに変更する */
+        display: block;
+    }
+
+    .menu li {
+        
+        padding: 12px 0;
+
+        /* PC版でつけていた右側の縦線を消す */
+        border-right: none;
+
+        border-bottom: 1px solid #000;
+    }
+
+}
