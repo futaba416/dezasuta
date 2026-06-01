@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、変数の宣言「result」という名前の変数を作成して、数値型の「0」を格納しましょう。
+        let result = 0;
+        // 2、繰り返し構文（for文）1~10までの数字を全て足し合わせて、変数resultに格納しましょう。（for文の繰り返しを活用します）
+        for (let i = 0; i <= 10; i++) {
+            result = result + i;
+        }
+        // 3、条件分岐（if文）足し合わせた結果の値によって異なるメッセージを表示させます。
+        // もし、すべて足した結果（result）が20以上なら、consoleログに「20以上」と出力、20未満なら「20未満」と出力してください。
+        if (result >= 20) {
+            console.log("20以上");
+        } else {
+            console.log("20未満");
+        }
+    </script>
+</body>
+
+</html>
