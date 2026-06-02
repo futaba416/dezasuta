@@ -29,10 +29,13 @@ img {
 }
 
 .service {
-    max-width: 960px;
-    margin: 0 auto;
     padding: 60px 40px;
     background-color: #eeeeee;
+}
+
+.service-inner {
+    max-width: 960px;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
