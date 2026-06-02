@@ -29,7 +29,7 @@ img {
 }
 
 .service {
-    width: 100%;
+    max-width: 960px;
     margin: 0 auto;
     padding: 60px 40px;
     background-color: #eeeeee;
@@ -60,7 +60,7 @@ img {
     padding: 10px;
 }
 
-.service-body h3 {
+.service-body h2 {
     color: #017e6e;
     font-size: 20px;
     margin-bottom: 10px;
@@ -76,7 +76,6 @@ img {
 /* 400px以下でスマホレイアウト */
 @media screen and (max-width: 400px) {
     .service {
-        width: 100%;
         padding: 40px 12px;
     }
 
@@ -89,7 +88,4 @@ img {
         margin-bottom: 30px;
     }
 
-    .service-item img {
-        width: 100%;
-    }
 }
