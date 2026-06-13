@@ -14,6 +14,8 @@ ul,
 li,
 p,
 dl,
+dt,
+dd,
 div {
     margin: 0;
     padding: 0;
