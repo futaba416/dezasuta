@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+/* ユーザー設定に応じて余計な動きを軽減 */
+@media (prefers-reduced-motion: no-preference) {
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -85,12 +92,12 @@ body {
 }
 
 .intro-lead {
-    font-size: 26px;
+    font-size: clamp(16px, 1.8vw, 26px);
     letter-spacing: 0.05em;
 }
 
 .intro-title {
-    font-size: 64px;
+    font-size: clamp(31px, 4.4vw, 64px);
     line-height: 1.5;
     margin-bottom: 16px;
 }
@@ -100,8 +107,12 @@ body {
 }
 
 .intro-text {
-    font-size: 32px;
+    font-size: clamp(16px, 1.66vw, 24px);
     line-height: 1.5;
+}
+
+.sp-br {
+    display: none;
 }
 
 /* about */
@@ -254,6 +265,10 @@ body {
     line-height: 1.8;
 }
 
+.footer-info dd {
+    line-height: 1.5;
+}
+
 .copyright {
     font-size: 16px;
     line-height: 1.5;
@@ -270,7 +285,6 @@ body {
 .sp-menu {
     display: none;
 }
-
 
 @media screen and (max-width: 1100px) {
 
@@ -361,23 +375,23 @@ body {
         font-family: "Alatsi", sans-serif;
     }
 
-    .intro-title {
-        font-size: 31px;
-    }
-
     .about-content h3 {
         font-size: 24px;
     }
-}
 
-.sp-br {
-    display: none;
 }
-
 
 /* スマホ画面 */
 
 @media screen and (max-width: 767px) {
+
+    .about,
+    .menu-list,
+    .event-box,
+    .footer-inner,
+    .copyright {
+        width: calc(100% - 40px);
+    }
 
     .intro,
     .about,
@@ -386,18 +400,6 @@ body {
     .event,
     .main-visual {
         margin-bottom: 88px;
-    }
-
-    .about,
-    .menu-list,
-    .event-box,
-    .event-list,
-    .event-item a,
-    .event-item time,
-    .event-item span,
-    .footer-inner,
-    .footer-info dl {
-        display: block;
     }
 
     .title {
@@ -412,12 +414,7 @@ body {
 
     /* intro */
     .intro-text {
-        font-size: 16px;
         line-height: 2;
-    }
-
-    .intro-lead {
-        font-size: 16px;
     }
 
     .sp-br {
@@ -425,6 +422,10 @@ body {
     }
 
     /* about */
+
+    .about {
+        display: block;
+    }
 
     .about-title {
         font-size: 32px;
@@ -444,6 +445,11 @@ body {
     }
 
     /* menu */
+
+    .menu-list {
+        display: block;
+    }
+
     .menu-card {
         margin-bottom: 40px;
     }
@@ -452,10 +458,12 @@ body {
 
     /* event */
     .event-box {
+        display: block;
         padding: 32px 20px;
     }
 
     .event-list {
+        display: block;
         width: 100%;
     }
 
@@ -464,14 +472,17 @@ body {
     }
 
     .event-item a {
+        display: block;
         font-size: 16px;
     }
 
     .event-item time {
+        display: block;
         margin-bottom: 8px;
     }
 
     .event-item span {
+        display: block;
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -485,10 +496,11 @@ body {
 
     /* footer */
     .footer {
-        padding: 80px 20px;
+        padding: 80px 0;
     }
 
     .footer-inner {
+        display: block;
         margin-bottom: 80px;
     }
 
@@ -504,6 +516,10 @@ body {
 
     .footer-info dd {
         margin-bottom: 24px;
+    }
+
+    .footer-info dl {
+        display: block;
     }
 
 }
