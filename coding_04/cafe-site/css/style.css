@@ -58,6 +58,12 @@ body {
     width: 434px;
 }
 
+.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .pc-menu ul {
     display: flex;
     gap: 48px;
@@ -333,7 +339,7 @@ body {
         position: absolute;
         left: 7px;
         bottom: 13px;
-        text-replace: 0.3s;
+        transition: 0.3s;
     }
 
     .open span {
@@ -409,7 +415,7 @@ body {
     .logo {
         width: 244px;
         position: relative;
-        top: -25px;
+        top: 5.5px;
     }
 
     /* intro */
