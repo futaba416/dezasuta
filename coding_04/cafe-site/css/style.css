@@ -52,6 +52,7 @@ body {
     top: 30.5px;
     left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .logo {
@@ -100,6 +101,7 @@ body {
 .intro-lead {
     font-size: clamp(16px, 1.8vw, 26px);
     letter-spacing: 0.05em;
+    margin-top: 132px;
 }
 
 .intro-title {
@@ -198,12 +200,29 @@ body {
 /* gallery */
 
 .gallery-list {
-    display: flex;
     width: 100%;
 }
 
-.gallery-list img {
-    width: 20%;
+.gallery-item {
+    display: block;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-modal {
+    max-width: 900px;
+    padding: 40px 24px 24px;
+    background-color: #fff;
+}
+
+.gallery-modal img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* event */
@@ -285,11 +304,34 @@ body {
     bottom: 20px;
     right: 20px;
     width: 140px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 100;
 }
+
+.page-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 .hamburger,
 .sp-menu {
     display: none;
+}
+
+/* スライダーの調整 */
+.slick-dots {
+    bottom: -65px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+}
+
+.slick-dots li {
+    margin: 0 22px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -461,6 +503,9 @@ body {
     }
 
     /* gallery */
+    .gallery-list img {
+        width: 100%;
+    }
 
     /* event */
     .event-box {
